@@ -1,0 +1,42 @@
+[include]
+        path = .gitconfig.user
+        path = .gitconfig.alias
+        path = .gitconfig.diff.merge
+
+[color]
+        ui = auto
+        branch = auto
+        diff = auto
+        status = auto
+        interactive = auto
+
+[color "branch"]
+        current = cyan bold
+        local = green bold
+        remote = red bold
+        upstream = red bold
+        plain = yellow reverse
+
+[color "diff"]
+        plain = normal
+        meta = yellow bold
+        frag = magenta bold
+        old = red bold
+        new = green bold
+        commit = yellow
+        whitespace = red reverse
+
+[color "grep"]
+        filename = yellow bold
+        linenumber = magenta bold
+        match = green reverse bold
+        separator = red bold
+        selected = white bold
+        context = black
+        function = red
+
+[format]
+        pretty = format:%C(yellow)%h%C(auto)%d%Creset %s %Cgreen<%an>%Creset %C(bold blue)(%ad)%Creset
+
+[push]
+        default = simple

@@ -1,0 +1,6 @@
+[diff]
+	external = /usr/local/bin/gdiff.sh
+
+[merge]
+	external = /usr/local/bin/gdiff.sh
+
