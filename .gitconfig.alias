@@ -25,4 +25,5 @@
 	ls-untracked = "!git status --porcelain -uall | awk '$1 == \"??\" {print $2}'"
 	who = shortlog -n -s --
 	gr = "grep --break --heading"
-	graphviz = "!f() { echo 'digraph git {' ; git log --pretty='format:  %h -> { %p }' \"$@\" | sed 's/[0-9a-f][0-9a-f]*/\"&\"/g' ; echo '}'; }; f"
+
+	rm-kak       = clean -fd
