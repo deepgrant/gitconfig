@@ -1,4 +1,5 @@
 [alias]
+        ic           = rev-list --max-parents=0 HEAD
         ci           = commit -m
 	st           = status -s -b
 
