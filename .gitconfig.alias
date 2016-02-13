@@ -1,4 +1,5 @@
 [alias]
+        ci           = commit -m
 	st           = status -s -b
 
 	today        = !git log --since=midnight --author=\"`git config user.name`\" --no-merges --all
