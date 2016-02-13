@@ -1,20 +1,22 @@
 [alias]
-	st = status -s -b
-	today = !git log --since=midnight --author=\"`git config user.name`\" --no-merges --all
-	today-all = !git log --since=midnight --no-merges --all
-	log-local = log --oneline origin..HEAD
-	lp = log -p
-	lg = log --decorate --oneline --graph
-	lgr = log --decorate --date=relative --graph
-	lga = log --decorate --date=short --graph
+	st           = status -s -b
 
-	ll = log --pretty=format:"%C(yellow)%h%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate --numstat
-	ld = log --pretty=format:"%C(yellow)%h\\ %C(green)%ad%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate --date=short --graph
-	ls = log --pretty=format:"%C(green)%h\\ %C(yellow)[%ad]%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate --date=relative
-	ls = "!git status -suno"
+	today        = !git log --since=midnight --author=\"`git config user.name`\" --no-merges --all
+	today-all    = !git log --since=midnight --no-merges --all
 
-	lg50 = "!git log --graph --abbrev-commit --date=relative --pretty=format:'%x00%h%x00%s%x00%cd%x00%an%x00%d' | gawk -F '\\0' '{ printf \"%s\\033[31m%s\\033[0m %-50s \\033[32m%14s\\033[0m \\033[30;1m%s\\033[0m\\033[33m%s\\n\", $1, $2, gensub(/(.{49}).{2,}/, \"\\\\1...\",\"g\",$3), $4, $5, $6 }' | less -R"
-	lg80 = "!git log --graph --abbrev-commit --date=relative --pretty=format:'%x00%h%x00%s%x00%cd%x00%an%x00%d' | gawk -F '\\0' '{ printf \"%s\\033[31m%s\\033[0m %-80s \\033[32m%14s\\033[0m \\033[30;1m%s\\033[0m\\033[33m%s\\n\", $1, $2, gensub(/(.{79}).{2,}/, \"\\\\1...\",\"g\",$3), $4, $5, $6 }' | less -R"
+	mv-author    = commit --amend --author
+
+	log-local    = log --oneline origin..HEAD
+	lp           = log -p
+	lg           = log --decorate --oneline --graph
+	lgr          = log --decorate --date=relative --graph
+	lga          = log --decorate --date=short --graph
+
+	ll           = log --pretty=format:"%C(yellow)%h%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate --numstat
+	ld           = log --pretty=format:"%C(yellow)%h\\ %C(green)%ad%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate --date=short --graph
+	ls           = log --pretty=format:"%C(green)%h\\ %C(yellow)[%ad]%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate --date=relative
+	ls           = "!git status -suno"
+
 	ls-modified  = "!git status --porcelain -uno | awk 'match($1, /M/) {print $2}'"
 	ls-added     = "!git status --porcelain -uno | awk 'match($1, /A/) {print $2}'"
 	ls-deleted   = "!git status --porcelain -uno | awk 'match($1, /D/) {print $2}'"
@@ -25,8 +27,8 @@
 	ls-untracked = "!git status --porcelain -uall | awk '$1 == \"??\" {print $2}'"
 	ls-nameonly  = show HEAD --name-only
 
-	who = shortlog -n -s --
-	gr = "grep --break --heading"
+	who          = shortlog -n -s --
+	gr           = "grep --break --heading"
 
 	rm-kak       = clean -fd
 	stash-all    = stash -u
